@@ -16,6 +16,10 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+//        var_dump($this->rand());
+//
+//        die();
+
         return new ViewModel();
     }
 }

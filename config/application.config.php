@@ -6,6 +6,7 @@ return array(
         'Market',
         'Search',
         'ZendDeveloperTools',
+        'OcraLoremModule',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

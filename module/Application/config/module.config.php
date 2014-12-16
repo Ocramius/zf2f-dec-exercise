@@ -7,6 +7,8 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
+use Application\View\Helper\DiceThrow;
+
 return array(
     'router' => array(
         'routes' => array(
@@ -74,6 +76,16 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController'
+        ),
+    ),
+    'controller_plugins' => array(
+        'invokables' => array(
+            'rand' => 'Application\Controller\Helper\RandomNumber',
+        ),
+    ),
+    'view_helpers' => array(
+        'invokables' => array(
+            'dice' => DiceThrow::class,
         ),
     ),
     'view_manager' => array(
