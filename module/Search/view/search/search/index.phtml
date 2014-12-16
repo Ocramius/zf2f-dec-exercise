@@ -1,0 +1,53 @@
+<style>
+label {
+	width: 200px;
+	float: left;
+}
+input {
+	float: left;
+}
+</style>
+<div class="span8">
+<?php // send categories to layout ?>
+<?php $this->placeholder('category')->exchangeArray($this->categories); ?>
+<table width="100%">
+<?php if ($this->messages) : ?>
+	<tr>
+		<td colspan=3>
+			<b><i style="color: red;"><?php echo implode('<br />', $this->messages); ?></i></b>
+		</td>
+	</tr>
+<?php endif; ?>
+<tr><td valign="TOP">
+	<?php
+	$form = $this->searchForm;
+	$form->prepare();
+	$form->setAttribute('action', $this->url('search-list'));
+	$form->setAttribute('method', 'POST');
+	echo $this->form()->openTag($form);
+	?>
+	<table>
+	<!--  Using custom view helpers in Application\Helper\* -->
+	<tr><td><?php echo $this->formRow($form->get('category')); ?></td></tr>
+	<tr><td><?php echo $this->formRow($form->get('title')); ?></td></tr>
+	<tr><td><?php echo $this->formRow($form->get('priceMin')); ?></td></tr>
+	<tr><td><?php echo $this->formRow($form->get('priceMax')); ?></td></tr>
+	<tr><td><?php echo $this->formRow($form->get('city')); ?></td></tr>
+	<tr><td><?php echo $this->formRow($form->get('country')); ?></td></tr>
+	<tr><td><?php echo $this->formRow($form->get('expires')); ?></td></tr>
+	</table>
+</td>
+<td width="100px">&nbsp;</td>
+<td valign="TOP">
+	<table>
+	<tr><td><?php echo $this->formRow($form->get('name')); ?></td></tr>
+	<tr><td><?php echo $this->formRow($form->get('phone')); ?></td></tr>
+	<tr><td><?php echo $this->formRow($form->get('email')); ?></td></tr>
+	<tr><td><?php echo $this->formRow($form->get('description')); ?></td></tr>
+	<tr><td><?php echo $this->formSubmit($form->get('submit')); ?></td></tr>
+	</table>
+	<?php echo $this->form()->closeTag($form); ?>
+</td>
+</tr>
+</table>
+</div>
