@@ -12,5 +12,18 @@
         "zendframework/zendframework": "2.3.*",
         "zendframework/zend-developer-tools": "dev-master",
         "ocramius/ocra-lorem-module": "~0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "BlogModule\\": "module/BlogModule/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "BlogModuleTest\\": "module/BlogModule/test"
+        }
     }
 }
