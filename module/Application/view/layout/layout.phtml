@@ -1,3 +1,4 @@
+<?php /* @var $this \Zend\View\Renderer\PhpRenderer */ ?>
 <?php echo $this->doctype(); ?>
 
 <html lang="en">
@@ -23,7 +24,6 @@
             ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
             ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
         ; ?>
-
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -44,9 +44,11 @@
             </div>
         </nav>
         <div class="container">
-            <div class="col-lg-2">
-                <?php echo $this->categories; ?>
-            </div>
+            <?=
+                $this
+                    ->flashMessenger()
+                    ->render(\Zend\Mvc\Controller\Plugin\FlashMessenger::NAMESPACE_ERROR);
+            ?>
             <div class="col-lg-10">
                 <?php echo $this->content; ?>
             </div>

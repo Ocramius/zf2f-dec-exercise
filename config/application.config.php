@@ -4,9 +4,12 @@ return array(
     'modules' => array(
         'Application',
         'Market',
-        'Search',
-        'ZendDeveloperTools',
-        'OcraLoremModule',
+        //'Search',
+        //'ZendDeveloperTools',
+        //'OcraLoremModule',
+        //'RoutingExamples',
+        //'EventTrap',
+        //'SxBootstrap',
     ),
 
     // These are various options for the listeners attached to the ModuleManager
